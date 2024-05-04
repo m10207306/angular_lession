@@ -1,0 +1,28 @@
+<p>Event Binding Demo</p>
+
+<button (click)="SayHi()">SayHi</button>
+
+<p>Event Binding with argument Demo</p>
+<div (click)="onClick('div')">
+    <button (click)="onClick('button')">SayHi</button>
+</div>
+
+<p>Event Binding using $event Demo</p>
+<div (click)="onClick2($event, 'div')">
+    <button (click)="onClick2($event, 'button')">SayHi</button>
+</div>
+
+<p>$event method Demo</p>
+<div (click)="onClick3($event, 'div')">
+    <a (click)="onClick3($event, 'a')" href="http://www.google.com">Google</a>
+</div>
+
+<p>$event target Demo</p>
+<div>
+    你選的是: {{result}}
+    <select (change)="onchange($event)" [value]="result">
+        <option value="0101">Java Script</option>
+        <option value="0102">Type Script</option>
+        <option value="0103">Angular</option>
+    </select>
+</div>

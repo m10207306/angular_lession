@@ -1,0 +1,24 @@
+<p>page1 works!</p>
+
+<div *ngIf="member.length > 0; else noMember">
+    <ul>
+        <li *ngFor="let item of member; let i = index; let last_bool = last">
+            {{i+1}} : {{item}}
+            <ng-container *ngIf="last_bool">
+                <hr>
+                <div> 總共 {{member.length}} 筆 </div>
+            </ng-container>
+        </li>
+    </ul>
+</div>
+
+<ng-template #noMember>
+    <div>目前沒有會員</div>
+</ng-template>
+
+<div>
+    您查詢的成員是: {{getName(2)}}
+</div>
+<div>
+    您查詢的成員是: {{getName(4)}}
+</div>

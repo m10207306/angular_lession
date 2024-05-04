@@ -1,0 +1,9 @@
+<div>
+    ID: {{pic.PictureID}} - Subject: {{pic.Subject}} - Author: {{pic.Author}} <br>
+    <img src="{{pic.Url}}" height="200">
+</div>
+
+<div *ngFor="let pic of pics">
+    ID: {{pic.PictureID}} - Subject: {{pic.Subject}} - Author: {{pic.Author}} <br>
+    <img src="{{pic.Url}}" height="200">
+</div>

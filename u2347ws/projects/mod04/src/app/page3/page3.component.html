@@ -1,0 +1,30 @@
+<style>
+    .big 
+    {
+        font-weight: bold;
+        font-size: x-large;
+    }
+
+    .small
+    {
+        font-weight: normal;
+        font-size: x-small;
+        background-color: yellow;
+    }
+
+    .blue
+    {
+        color: blue;
+    }
+
+    .green
+    {
+        color: green;
+    }
+</style>
+
+<div class="big blue">big blue</div>
+<div [class]="classes">classes</div>
+<div [class.small]="true">class.small</div>
+<div [ngClass]="classes">ngClass = classes</div>
+<div [ngClass]="{'big': true, 'green': true}">ngClass = ...</div>
