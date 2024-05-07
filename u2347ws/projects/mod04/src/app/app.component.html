@@ -18,12 +18,11 @@
 </div>
 
 <searchBox [searchText]="mySearch" (searchTextChange)="mySearch=$event">
-  <h3 *ngif="mySearch.length > 0">
-    找到了 {{mySearch}} !!
-  </h3>
+<!-- <searchBox [(searchText)]="mySearch"> -->
 </searchBox>
 
-<router-outlet></router-outlet>
+<h3 *ngIf="mySearch.length > 0">
+  找到了 {{mySearch}} !!
+</h3>
 
-<!-- <page1></page1> -->
-<!-- <page2></page2> -->
+<router-outlet></router-outlet>

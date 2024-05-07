@@ -13,7 +13,6 @@ export class SearchBoxComponent {
 
   onSearch(search:string) {
     this.searchText = search;
-    console.log(this.searchText)
     this.searchTextChange.emit(this.searchText)
   }
 }
