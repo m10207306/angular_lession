@@ -11,6 +11,7 @@
   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -scope CurrentUser
 
 https://drive.google.com/drive/folders/1-1VYcI_WEmc7-VmorNtDDXcDTnGbOeHZ?usp=drive_link
+http://10.0.1.200:5050/
 
 * 問題
   1. 用 constructor 跟不用的差別

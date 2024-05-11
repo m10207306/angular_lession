@@ -1,0 +1,32 @@
+<p>page7 works!</p>
+
+<style>
+    .table {
+        display: table;
+    }
+
+    .row {
+        display: table-row;
+    }
+
+    .col {
+        display: table-cell;
+        width: 150px;
+    }
+</style>
+
+<div class="table">
+    <div class="row" *ngFor="let st of students; let i=index; let o=odd" [style.background-color]="o? 'yellow' : ''">
+        <div class="col">No.{{i+1}}</div>
+        <div class="col"> {{st.Id}} </div>
+        <div class="col"> {{st.Name}} </div>
+        <div class="col"> {{st.Birthday | date: "MM-dd-yyyy"}} </div>
+        <div class="col">
+            <ng-container [ngSwitch]="st.Birthday.getMonth()">
+                <span *ngSwitchCase="thisMonth" style="color:red">本月壽星</span>
+                <span *ngSwitchCase="thisMonth < 10? thisMonth + 1 : 0" style="color:blue">下個月壽星</span>
+                <span *ngSwitchDefault style="font-size: x-small">再等等</span>
+            </ng-container>
+        </div>
+    </div>
+</div>

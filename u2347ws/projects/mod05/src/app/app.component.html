@@ -1,0 +1,48 @@
+<!-- 練習4  viewchild -->
+<!-- <h1 #title1> {{title}} </h1> -->
+<!-- 練習5  directive -->
+<!-- <h1 #title1 InTheBox> {{title}} </h1> -->
+
+<!-- 練習6  HostListener -->
+<!-- <h1 #title1 InTheBox borderStyle="dashed 3px blue"> {{title}} </h1> -->
+
+<!-- 練習7  HostListener default 參數 -->
+<h1 #title1 InTheBox="dashed 3px blue"> {{title}} </h1>
+
+<!-- 練習1 生命週期 -->
+<!-- 購買數量:
+<input type="number" [(ngModel)]="QTY">
+<CheckStock [QTY]="QTY" [Stock]="Stock"></CheckStock> -->
+
+<!-- 練習2 ngcontent select-->
+<!-- 購買數量:
+<input type="number" [(ngModel)]="QTY">
+<CheckStock [QTY]="QTY" [Stock]="Stock">
+  <span class="lower"> 庫存不足, 目前只有 {{Stock}} </span>
+  <span class="enough"> 庫存足夠 </span>
+</CheckStock> -->
+
+<!-- 練習3 contentchild -->
+購買數量:
+<input type="number" [(ngModel)]="QTY">
+<CheckStock [QTY]="QTY" [Stock]="Stock">
+  <span #span class="lower"> 庫存不足, 目前只有 {{Stock}} </span>
+  <span #span class="enough"> 庫存足夠 </span>
+</CheckStock>
+
+<!-- 練習8 Pipe -->
+<div> UpperCase: {{vString | uppercase}} </div>
+<div> LowerCase: {{vString | lowercase}} </div>
+<div> Date: {{vDate | date}} </div>
+<div> Date 'shortDate': {{vDate | date: 'shortDate'}} </div>
+<div> Date 'yyyy-MM-dd': {{vDate | date: 'yyyy-MM-dd'}} </div>
+<div> currency: {{vMoney | currency}} </div>
+<div> number: {{vNumber | number}} </div>
+<div> number: {{vNumber | number: "1.0-0"}} </div>
+<div> number: {{vNumber | number: "3.1-5"}} </div>
+<div> number: {{vNumber2 | number}} </div>
+<div> number: {{vNumber2 | number: "1.0-0"}} </div>
+<div> number: {{vNumber2 | number: "3.1-5"}} </div>
+<div> number: {{vNumber2 | number: "3.5-5"}} </div>
+<!-- 練習9 自定義 Pipe -->
+<div> USD2TWD: {{vMoney | USD2TWD | currency}} </div>

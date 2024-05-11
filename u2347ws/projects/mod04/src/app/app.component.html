@@ -17,12 +17,34 @@
   </ul>
 </div>
 
-<searchBox [searchText]="mySearch" (searchTextChange)="mySearch=$event">
-<!-- <searchBox [(searchText)]="mySearch"> -->
+
+<!-- 練習1 -->
+<!-- <searchBox [searchText]="mySearch" (searchTextChange)="mySearch=$event"> -->
+<!-- <searchBox [(searchText)]="mySearch">
+</searchBox> -->
+<!-- <h3 *ngIf="mySearch.length > 0">
+  找到了 {{mySearch}} !!
+</h3> -->
+
+<!-- 練習2 -->
+<!-- 這樣有點奇怪, 一進入網頁甚麼都沒做就說沒找到 -->
+<!-- <h3 [style.border]="mySearch.length > 0? 'solid 3px blue': 'solid 3px red'">
+  <span *ngIf="mySearch.length > 0; else notFound">
+    找到了 {{mySearch}} !!
+  </span>
+  <ng-template #notFound>沒找到</ng-template>
+</h3> -->
+
+<!-- 練習3 -->
+<searchBox [(searchText)]="mySearch" (searchTextChange)="onTextChange($event)">
 </searchBox>
 
-<h3 *ngIf="mySearch.length > 0">
-  找到了 {{mySearch}} !!
+<h3 [ngStyle]="resultStyle" *ngIf="isTouch">
+  <span *ngIf="isFound; else notFound">
+    找到了 {{mySearch}} !!
+  </span>
+  <ng-template #notFound>沒找到</ng-template>
 </h3>
+
 
 <router-outlet></router-outlet>
