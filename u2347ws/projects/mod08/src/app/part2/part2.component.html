@@ -1,0 +1,72 @@
+<div>
+    <button (click)="Get117()">
+        Get117
+    </button>
+    {{result}}
+
+    <hr>
+
+    <button (click)="GetWeatherForcast()">
+        Get GetWeatherForcast
+    </button>
+    <div class="table" *ngIf="wfList.length > 0">
+        <div class="row">
+            <div class="col">Date</div>
+            <div class="col">攝氏</div>
+            <div class="col">華氏</div>
+            <div class="col">摘要</div>
+        </div>
+        <div class="row" *ngFor="let item of wfList">
+            <div class="col"> {{item.date | date: 'yyyy/MM/dd'}} </div>
+            <div class="col"> {{item.temperatureC}} </div>
+            <div class="col"> {{item.temperatureF}} </div>
+            <div class="col"> {{item.summary}} </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div>
+        <input type="number" #userID>
+        <button (click)="GetUser(userID.value)"> 
+            GetUSer() 
+        </button>
+        {{ user | json }}
+    </div>
+
+    <hr>
+
+    <div>
+        <button (click)="GetUserByOptions(111, 'body')">
+            observe: 'body', responseType: 'text'
+        </button>
+        <button (click)="GetUserByOptions(111, 'response')">
+            observe: 'response', responseType: 'text'
+        </button>
+        <br>
+        {{optionResult}}
+    </div>
+
+    <hr>
+
+    <div>
+        ID: <input type="number" #uID> <br>
+        Name: <input type="text" #uName>
+        <button (click)="POSTUser(uID.value, uName.value)">
+            postUser
+        </button>
+        <br>
+        {{postResult}}
+    </div>
+
+    <hr>
+
+    <div>
+        FileName: <input type="text" #file>
+        <button (click)="GetDownload(file.value)">
+            下載檔案
+        </button>
+        <progress [value]="progress"></progress>
+        <img #img width="600px">
+    </div>
+</div>
