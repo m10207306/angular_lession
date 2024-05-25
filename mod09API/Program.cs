@@ -4,7 +4,17 @@ using mod09API.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+var AllowMyFrontEnd = "AllowMyFrontEnd";
+builder.Services.AddCors(options => 
+    {
+        options.AddPolicy(name: AllowMyFrontEnd,
+            policy => 
+            {
+                policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+            }
+        );
+    }
+);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<MeetingRoomContext> (
     options => options.UseSqlServer(
@@ -32,7 +42,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors(AllowMyFrontEnd);
 app.UseAuthorization();
 
 app.MapControllers();
